@@ -24,17 +24,9 @@
       {
         "name": "build",
         "type": "mvn",
-        "commandLine": "mvn -f ${current.project.path} clean install -DskipTests && cp ${current.project.path}/target/*.war $TOMCAT_HOME/webapps/ROOT.war",
+        "commandLine": "mvn -f ${current.project.path} clean install -DskipTests",
         "attributes": {
           "previewUrl": ""
-        }
-      },
-      {
-        "name": "run tomcat",
-        "type": "custom",
-        "commandLine": "$TOMCAT_HOME/bin/catalina.sh run",
-        "attributes": {
-          "previewUrl": "http://${server.port.8080}"
         }
       },
       {
@@ -46,7 +38,7 @@
         }
       },
       {
-        "name": "build and run",
+        "name": "build and deploy",
         "type": "mvn",
         "commandLine": "mvn -f ${current.project.path} clean install -DskipTests && cp ${current.project.path}/target/*.war $TOMCAT_HOME/webapps/ROOT.war && $TOMCAT_HOME/bin/catalina.sh run",
         "attributes": {
