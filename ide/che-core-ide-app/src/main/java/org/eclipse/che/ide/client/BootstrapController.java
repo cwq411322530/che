@@ -212,8 +212,6 @@ public class BootstrapController {
             }
         });
 
-        elemental.html.Window window = Browser.getWindow();
-
         Scheduler.get().scheduleDeferred(new ScheduledCommand() {
             @Override
             public void execute() {
